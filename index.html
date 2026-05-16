@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central de Operações — Ilhabela</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.4.0/tabler-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-icon"><i class="ti ti-building-skyscraper"></i></div>
+        <div>
+          <div class="logo-title">Ilhabela</div>
+          <div class="logo-sub">central de operações</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#section-status" class="nav-item active">
+          <i class="ti ti-device-tv-old"></i><span>Status</span>
+        </a>
+        <a href="#section-leads" class="nav-item">
+          <i class="ti ti-users"></i><span>Leads</span>
+        </a>
+        <a href="#section-calls" class="nav-item">
+          <i class="ti ti-headset"></i><span>Call Center</span>
+        </a>
+        <a href="#section-iscas" class="nav-item">
+          <i class="ti ti-magnet"></i><span>Iscas Digitais</span>
+        </a>
+        <a href="#section-history" class="nav-item">
+          <i class="ti ti-clock-hour-4"></i><span>Histórico</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-live">
+        <div class="live-indicator">
+          <span class="live-dot"></span>
+          <span class="live-label">ao vivo</span>
+        </div>
+        <div class="live-time" id="last-check-side">—</div>
+        <div class="live-next" id="next-check">próx. em 30s</div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- PAGE HEADER -->
+      <header class="page-header">
+        <div>
+          <h1>Central de Operações</h1>
+          <p class="subtitle" id="header-subtitle">carregando dados...</p>
+        </div>
+        <button class="btn-refresh" onclick="runAll()" id="refresh-btn">
+          <i class="ti ti-refresh" id="refresh-icon"></i>
+          Atualizar
+        </button>
+      </header>
+
+      <!-- SUMMARY METRICS -->
+      <section class="summary-row" id="section-status">
+        <div class="metric-card">
+          <div class="metric-icon ok"><i class="ti ti-signal"></i></div>
+          <div class="metric-body">
+            <div class="metric-value" id="sum-online">—</div>
+            <div class="metric-label">serviços online</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon warn"><i class="ti ti-alert-triangle"></i></div>
+          <div class="metric-body">
+            <div class="metric-value" id="sum-issues">—</div>
+            <div class="metric-label">com problemas</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon info"><i class="ti ti-users"></i></div>
+          <div class="metric-body">
+            <div class="metric-value" id="sum-leads">—</div>
+            <div class="metric-label">leads capturados</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon purple"><i class="ti ti-phone-call"></i></div>
+          <div class="metric-body">
+            <div class="metric-value" id="sum-calls">—</div>
+            <div class="metric-label">ligações hoje</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon magnet"><i class="ti ti-magnet"></i></div>
+          <div class="metric-body">
+            <div class="metric-value" id="sum-iscas">—</div>
+            <div class="metric-label">leads iscas</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SITES STATUS -->
+      <section class="card-section" id="section-sites">
+        <div class="section-header">
+          <h2 class="section-title"><i class="ti ti-world"></i> Sites de Captura</h2>
+          <span class="section-badge" id="badge-sites">verificando...</span>
+        </div>
+        <div class="services-grid" id="sites-grid"></div>
+      </section>
+
+      <!-- CALL CENTER STATUS -->
+      <section class="card-section" id="section-callcenter">
+        <div class="section-header">
+          <h2 class="section-title"><i class="ti ti-headset"></i> Call Center</h2>
+          <span class="section-badge" id="badge-cc">verificando...</span>
+        </div>
+        <div class="services-grid" id="cc-grid"></div>
+      </section>
+
+      <!-- LEADS POR SITE -->
+      <section class="card-section" id="section-leads">
+        <div class="section-header">
+          <h2 class="section-title"><i class="ti ti-users"></i> Leads por Origem</h2>
+          <span class="section-badge" id="badge-leads-update">—</span>
+        </div>
+        <div class="leads-grid" id="leads-grid"></div>
+      </section>
+
+      <!-- CALL CENTER DATA -->
+      <section class="card-section" id="section-calls">
+        <div class="section-header">
+          <h2 class="section-title"><i class="ti ti-phone-call"></i> Call Center — Dados</h2>
+          <span class="section-badge" id="badge-calls-update">—</span>
+        </div>
+        <div class="calls-grid" id="calls-grid"></div>
+      </section>
+
+      <!-- ISCAS DIGITAIS -->
+      <section class="card-section card-section-iscas" id="section-iscas">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><i class="ti ti-magnet"></i> Iscas Digitais</h2>
+            <p class="section-desc">conteúdo gratuito para captura orgânica via ManyChat</p>
+          </div>
+          <span class="section-badge" id="badge-iscas">verificando...</span>
+        </div>
+        <div class="services-grid" id="iscas-grid"></div>
+      </section>
+
+      <!-- HISTORICO DE QUEDAS -->
+      <section class="card-section" id="section-history">
+        <div class="section-header">
+          <h2 class="section-title"><i class="ti ti-clock-hour-4"></i> Histórico de Eventos</h2>
+          <button class="btn-clear" onclick="clearHistory()">limpar</button>
+        </div>
+        <div class="history-table-wrap">
+          <table class="history-table" id="history-table">
+            <thead>
+              <tr>
+                <th>horário</th>
+                <th>serviço</th>
+                <th>evento</th>
+                <th>status</th>
+                <th>resposta</th>
+              </tr>
+            </thead>
+            <tbody id="history-body">
+              <tr class="empty-row"><td colspan="5"><i class="ti ti-check"></i> nenhum evento ainda</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="supabase.js"></script>
+  <script src="monitor.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
