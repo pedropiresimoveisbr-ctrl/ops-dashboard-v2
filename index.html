@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Central de Operações — Ilhabela</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.4.0/tabler-icons.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="layout">
 
@@ -113,6 +116,18 @@
         <div class="services-grid" id="sites-grid"></div>
       </section>
 
+      <!-- ISCAS DIGITAIS -->
+      <section class="card-section card-section-iscas" id="section-iscas">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title"><i class="ti ti-magnet"></i> Iscas Digitais</h2>
+            <p class="section-desc">conteúdo gratuito para captura orgânica via ManyChat</p>
+          </div>
+          <span class="section-badge" id="badge-iscas">verificando...</span>
+        </div>
+        <div class="services-grid" id="iscas-grid"></div>
+      </section>
+
       <!-- CALL CENTER STATUS -->
       <section class="card-section" id="section-callcenter">
         <div class="section-header">
@@ -140,17 +155,7 @@
         <div class="calls-grid" id="calls-grid"></div>
       </section>
 
-      <!-- ISCAS DIGITAIS -->
-      <section class="card-section card-section-iscas" id="section-iscas">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title"><i class="ti ti-magnet"></i> Iscas Digitais</h2>
-            <p class="section-desc">conteúdo gratuito para captura orgânica via ManyChat</p>
-          </div>
-          <span class="section-badge" id="badge-iscas">verificando...</span>
-        </div>
-        <div class="services-grid" id="iscas-grid"></div>
-      </section>
+
 
       <!-- HISTORICO DE QUEDAS -->
       <section class="card-section" id="section-history">
@@ -170,7 +175,9 @@
               </tr>
             </thead>
             <tbody id="history-body">
-              <tr class="empty-row"><td colspan="5"><i class="ti ti-check"></i> nenhum evento ainda</td></tr>
+              <tr class="empty-row">
+                <td colspan="5"><i class="ti ti-check"></i> nenhum evento ainda</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -184,4 +191,5 @@
   <script src="monitor.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
