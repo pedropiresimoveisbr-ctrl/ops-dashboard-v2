@@ -6,7 +6,7 @@ const monitorState   = {};   // { id: { status, ms } }
 const monitorHistory = [];   // array de eventos para a tabela histórico
 
 // inicializa estado
-[...SITES, CALLCENTER_APP].forEach(s => {
+[...SITES, ...ISCAS, CALLCENTER_APP].forEach(s => {
   monitorState[s.id] = { status: 'checking', ms: null };
 });
 
@@ -38,7 +38,7 @@ async function checkService(s) {
 
 // ── Verifica todos os serviços ────────────────────────────────
 async function checkAllServices() {
-  const all = [...SITES, CALLCENTER_APP];
+  const all = [...SITES, ...ISCAS, CALLCENTER_APP];
   const results = await Promise.all(all.map(s => checkService(s)));
   return results;
 }
