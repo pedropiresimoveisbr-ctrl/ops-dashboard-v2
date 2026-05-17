@@ -69,7 +69,13 @@ const ISCAS = [
     icon:  'ti-file-download',
     funil: 'guia-fgts',
   },
-  // Adicione novas iscas aqui seguindo o mesmo padrão
+  {
+    id:    'guia-mcmv',
+    name:  'Guia MCMV',
+    url:   'https://SEU-SITE-MCMV.vercel.app/',
+    icon:  'ti-home',
+    funil: 'guia-mcmv',
+  },
 ];
 
 // ── App Call Center ───────────────────────────────────────────
