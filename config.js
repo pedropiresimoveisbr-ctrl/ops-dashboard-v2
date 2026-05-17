@@ -66,14 +66,14 @@ const ISCAS = [
     id:    'guia-fgts',
     name:  'Guia FGTS',
     url:   'https://guia-fgts.vercel.app/',
-    icon:  'ti-file-download',
+    icon:  'ti-building-community',
     funil: 'guia-fgts',
   },
   {
     id:    'guia-mcmv',
     name:  'Guia MCMV',
-    url:   'https://SEU-SITE-MCMV.vercel.app/',
-    icon:  'ti-home',
+    url:   'https://guia-mcmv.vercel.app/',
+    icon:  'ti-building-community',
     funil: 'guia-mcmv',
   },
 ];
