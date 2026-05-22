@@ -23,6 +23,13 @@ const SUPABASE = {
 // ── Sites de captura de lead ──────────────────────────────────
 const SITES = [
   {
+    id:    'Pedro Pires Site Oficial',
+    name:  'PPedro Pires Site Oficial',
+    url:   'https://pedro-pires.vercel.app/',
+    icon:  'ti-building-community',
+    funil: 'site oficial',
+  },
+  {
     id:    'mrv',
     name:  'Parque Ilhabela MRV',
     url:   'https://parque-ilhabela-m-rv.vercel.app/',
