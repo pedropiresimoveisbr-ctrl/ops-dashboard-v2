@@ -27,7 +27,7 @@ const SITES = [
     name:  'PPedro Pires Site Oficial',
     url:   'https://pedro-pires.vercel.app/',
     icon:  'ti-building-community',
-    funil: 'site oficial',
+    funil: 'pedro-pires-site',
   },
   {
     id:    'mrv',
